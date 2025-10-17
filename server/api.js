@@ -13,7 +13,7 @@ app.use(express.json());
 
 /* --------- frontend static --------- */
 // adjust relative path if your folder differs
-const frontendPublicPath = path.join(__dirname, "../../Frontend/public");
+//const frontendPublicPath = path.join(__dirname, "../../Frontend/public");
 console.log("Serving frontend from:", frontendPublicPath);
 
 // DEBUG: show if env loaded
@@ -26,7 +26,7 @@ app.use((req, res, next) => {
 });
 
 // serve static files (so /src/styles/index.css etc. are served)
-app.use(express.static(frontendPublicPath));
+//app.use(express.static(frontendPublicPath));
 
 /* --------- MongoDB (connect once) --------- */
 const CON_STRING = process.env.MONGO_URI || "mongodb://127.0.0.1:27017";
@@ -223,15 +223,15 @@ app.delete("/delete-appointment/:id", async (req, res) => {
 });
 
 /* --------- Serve index at root only --------- */
-app.get("/", (req, res) => {
-  const indexFile = path.join(frontendPublicPath, "index.html");
-  res.sendFile(indexFile, (err) => {
-    if (err) {
-      console.error("Error sending index file:", err);
-      res.status(500).send("Server error");
-    }
-  });
-});
+//app.get("/", (req, res) => {
+  //const indexFile = path.join(frontendPublicPath, "index.html");
+  //res.sendFile(indexFile, (err) => {
+    //if (err) {
+      //console.error("Error sending index file:", err);
+      //res.status(500).send("Server error");
+    //}
+  //});
+//});
 
 /* --------- Start server --------- */
 const PORT = process.env.PORT || 4040;
