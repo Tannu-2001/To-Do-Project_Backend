@@ -14,7 +14,7 @@ app.use(express.json());
 /* --------- frontend static --------- */
 // adjust relative path if your folder differs
 //const frontendPublicPath = path.join(__dirname, "../../Frontend/public");
-console.log("Serving frontend from:", frontendPublicPath);
+//console.log("Serving frontend from:", frontendPublicPath);
 
 // DEBUG: show if env loaded
 console.log('ENV loaded:', !!process.env.MONGO_URI, ' DB_NAME=', process.env.DB_NAME);
